@@ -8,11 +8,7 @@ import java.util.NoSuchElementException;
 @Component
 public class ListElementsAdder {
 
-    private int sum;
-
-    public int sumListElements(List<Integer> list) throws NoSuchElementException {
-        sum = 0;
-        list.forEach(value -> sum += value);
-        return sum;
+     public int sumListElements(List<Integer> list) throws NoSuchElementException {
+        return  list.stream().reduce((sum,value)->sum+=value).get();
     }
 }
